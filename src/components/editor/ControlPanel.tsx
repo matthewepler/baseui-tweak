@@ -5,6 +5,7 @@ import { useThemeStore, type ColorMode } from "@/store/themeStore";
 import type { SemanticColorTokens } from "@/types/tokens";
 import { ColorPicker } from "./ColorPicker";
 import { TokenGroup } from "./TokenGroup";
+import { StylePanel } from "./StylePanel";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
@@ -107,6 +108,11 @@ export function ControlPanel({ mode }: ControlPanelProps) {
   return (
     <ScrollArea className="h-full">
       <div className="divide-y divide-[var(--border)]">
+        {/* UI Style */}
+        <TokenGroup title="UI Style" description="Visual language overlay for the preview" defaultOpen>
+          <StylePanel />
+        </TokenGroup>
+
         {/* Border Radius */}
         <TokenGroup title="Border Radius" description="Controls the roundness of components" defaultOpen>
           <div className="space-y-3">
