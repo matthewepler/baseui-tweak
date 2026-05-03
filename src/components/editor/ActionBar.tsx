@@ -15,6 +15,7 @@ import {
   Download,
   Droplets,
   Layers2,
+  LayoutDashboard,
   Moon,
   Paintbrush,
   RotateCcw,
@@ -37,9 +38,11 @@ const STYLE_MODES: UIStyleMode[] = ["default", "flat", "neumorphic", "glass"];
 interface ActionBarProps {
   mode: ColorMode;
   onModeChange: (mode: ColorMode) => void;
+  activeView: "editor" | "canvas";
+  onViewChange: (view: "editor" | "canvas") => void;
 }
 
-export function ActionBar({ mode, onModeChange }: ActionBarProps) {
+export function ActionBar({ mode, onModeChange, activeView, onViewChange }: ActionBarProps) {
   const { themeName, presetId, setThemeName, applyPreset, resetToPreset } = useThemeStore();
   const { mode: styleMode, setMode: setStyleMode } = useStyleStore();
   const [exportOpen, setExportOpen] = useState(false);
@@ -90,6 +93,32 @@ export function ActionBar({ mode, onModeChange }: ActionBarProps) {
         >
           <RotateCcw className="h-3.5 w-3.5" />
         </Button>
+
+        <Separator orientation="vertical" className="h-5" />
+
+        {/* View toggle: Editor / Canvas */}
+        <div className="flex items-center rounded-[var(--radius)] border border-[var(--border)] overflow-hidden" title="View">
+          {(["editor", "canvas"] as const).map((v) => (
+            <button
+              key={v}
+              type="button"
+              onClick={() => onViewChange(v)}
+              className={cn(
+                "flex items-center gap-1 px-2.5 h-8 text-xs transition-colors",
+                activeView === v
+                  ? "bg-[var(--primary)] text-[var(--primary-foreground)]"
+                  : "bg-[var(--background)] text-[var(--muted-foreground)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)]"
+              )}
+            >
+              {v === "editor" ? (
+                <LayoutDashboard className="h-3 w-3" />
+              ) : (
+                <Sparkles className="h-3 w-3" />
+              )}
+              <span className="hidden sm:inline capitalize">{v}</span>
+            </button>
+          ))}
+        </div>
 
         <Separator orientation="vertical" className="h-5" />
 
