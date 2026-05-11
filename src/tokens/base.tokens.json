@@ -1,0 +1,578 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "BaseUI design system tokens following the W3C Design Token Community Group format",
+
+  "color": {
+    "$description": "Color tokens",
+
+    "primitive": {
+      "$description": "Raw color palette — not for direct use in components",
+
+      "neutral": {
+        "$type": "color",
+        "0":   { "$value": "#ffffff", "$description": "Pure white" },
+        "50":  { "$value": "#f9fafb" },
+        "100": { "$value": "#f3f4f6" },
+        "200": { "$value": "#e5e7eb" },
+        "300": { "$value": "#d1d5db" },
+        "400": { "$value": "#9ca3af" },
+        "500": { "$value": "#6b7280" },
+        "600": { "$value": "#4b5563" },
+        "700": { "$value": "#374151" },
+        "800": { "$value": "#1f2937" },
+        "900": { "$value": "#111827" },
+        "950": { "$value": "#030712", "$description": "Near black" }
+      },
+
+      "blue": {
+        "$type": "color",
+        "50":  { "$value": "#eff6ff" },
+        "100": { "$value": "#dbeafe" },
+        "200": { "$value": "#bfdbfe" },
+        "300": { "$value": "#93c5fd" },
+        "400": { "$value": "#60a5fa" },
+        "500": { "$value": "#3b82f6" },
+        "600": { "$value": "#2563eb" },
+        "700": { "$value": "#1d4ed8" },
+        "800": { "$value": "#1e40af" },
+        "900": { "$value": "#1e3a8a" },
+        "950": { "$value": "#172554" }
+      },
+
+      "violet": {
+        "$type": "color",
+        "50":  { "$value": "#f5f3ff" },
+        "100": { "$value": "#ede9fe" },
+        "200": { "$value": "#ddd6fe" },
+        "300": { "$value": "#c4b5fd" },
+        "400": { "$value": "#a78bfa" },
+        "500": { "$value": "#8b5cf6" },
+        "600": { "$value": "#7c3aed" },
+        "700": { "$value": "#6d28d9" },
+        "800": { "$value": "#5b21b6" },
+        "900": { "$value": "#4c1d95" },
+        "950": { "$value": "#2e1065" }
+      },
+
+      "emerald": {
+        "$type": "color",
+        "50":  { "$value": "#ecfdf5" },
+        "100": { "$value": "#d1fae5" },
+        "200": { "$value": "#a7f3d0" },
+        "300": { "$value": "#6ee7b7" },
+        "400": { "$value": "#34d399" },
+        "500": { "$value": "#10b981" },
+        "600": { "$value": "#059669" },
+        "700": { "$value": "#047857" },
+        "800": { "$value": "#065f46" },
+        "900": { "$value": "#064e3b" },
+        "950": { "$value": "#022c22" }
+      },
+
+      "rose": {
+        "$type": "color",
+        "50":  { "$value": "#fff1f2" },
+        "100": { "$value": "#ffe4e6" },
+        "200": { "$value": "#fecdd3" },
+        "300": { "$value": "#fda4af" },
+        "400": { "$value": "#fb7185" },
+        "500": { "$value": "#f43f5e" },
+        "600": { "$value": "#e11d48" },
+        "700": { "$value": "#be123c" },
+        "800": { "$value": "#9f1239" },
+        "900": { "$value": "#881337" },
+        "950": { "$value": "#4c0519" }
+      },
+
+      "amber": {
+        "$type": "color",
+        "50":  { "$value": "#fffbeb" },
+        "100": { "$value": "#fef3c7" },
+        "200": { "$value": "#fde68a" },
+        "300": { "$value": "#fcd34d" },
+        "400": { "$value": "#fbbf24" },
+        "500": { "$value": "#f59e0b" },
+        "600": { "$value": "#d97706" },
+        "700": { "$value": "#b45309" },
+        "800": { "$value": "#92400e" },
+        "900": { "$value": "#78350f" },
+        "950": { "$value": "#451a03" }
+      }
+    },
+
+    "semantic": {
+      "$description": "Semantic tokens that map to primitive colors — use these in components",
+
+      "light": {
+        "$description": "Light mode semantic colors",
+
+        "background": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.0}",
+          "$description": "Default page background"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.950}",
+          "$description": "Default text color"
+        },
+
+        "card": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.0}",
+          "$description": "Card surface background"
+        },
+        "card-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.950}"
+        },
+
+        "popover": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.0}"
+        },
+        "popover-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.950}"
+        },
+
+        "primary": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}",
+          "$description": "Primary action color"
+        },
+        "primary-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+
+        "secondary": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.100}",
+          "$description": "Secondary/subtle action color"
+        },
+        "secondary-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+
+        "muted": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.100}",
+          "$description": "Muted/subdued surface"
+        },
+        "muted-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.500}"
+        },
+
+        "accent": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.100}",
+          "$description": "Accent highlight surface"
+        },
+        "accent-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+
+        "destructive": {
+          "$type": "color",
+          "$value": "{color.primitive.rose.600}",
+          "$description": "Destructive/error action color"
+        },
+        "destructive-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+
+        "border": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.200}",
+          "$description": "Default border color"
+        },
+        "input": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.200}",
+          "$description": "Input border color"
+        },
+        "ring": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.950}",
+          "$description": "Focus ring color"
+        },
+
+        "chart-1": { "$type": "color", "$value": "{color.primitive.blue.500}" },
+        "chart-2": { "$type": "color", "$value": "{color.primitive.violet.500}" },
+        "chart-3": { "$type": "color", "$value": "{color.primitive.emerald.500}" },
+        "chart-4": { "$type": "color", "$value": "{color.primitive.amber.500}" },
+        "chart-5": { "$type": "color", "$value": "{color.primitive.rose.500}" },
+
+        "sidebar": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+        "sidebar-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.950}"
+        },
+        "sidebar-primary": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+        "sidebar-primary-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+        "sidebar-accent": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.100}"
+        },
+        "sidebar-accent-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+        "sidebar-border": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.200}"
+        },
+        "sidebar-ring": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.950}"
+        }
+      },
+
+      "dark": {
+        "$description": "Dark mode semantic colors",
+
+        "background": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.950}"
+        },
+        "foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+
+        "card": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+        "card-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+
+        "popover": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+        "popover-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+
+        "primary": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+        "primary-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+
+        "secondary": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.800}"
+        },
+        "secondary-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+
+        "muted": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.800}"
+        },
+        "muted-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.400}"
+        },
+
+        "accent": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.800}"
+        },
+        "accent-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+
+        "destructive": {
+          "$type": "color",
+          "$value": "{color.primitive.rose.500}"
+        },
+        "destructive-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+
+        "border": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.700}"
+        },
+        "input": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.700}"
+        },
+        "ring": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.300}"
+        },
+
+        "chart-1": { "$type": "color", "$value": "{color.primitive.blue.400}" },
+        "chart-2": { "$type": "color", "$value": "{color.primitive.violet.400}" },
+        "chart-3": { "$type": "color", "$value": "{color.primitive.emerald.400}" },
+        "chart-4": { "$type": "color", "$value": "{color.primitive.amber.400}" },
+        "chart-5": { "$type": "color", "$value": "{color.primitive.rose.400}" },
+
+        "sidebar": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+        "sidebar-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+        "sidebar-primary": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+        "sidebar-primary-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.900}"
+        },
+        "sidebar-accent": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.800}"
+        },
+        "sidebar-accent-foreground": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.50}"
+        },
+        "sidebar-border": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.700}"
+        },
+        "sidebar-ring": {
+          "$type": "color",
+          "$value": "{color.primitive.neutral.300}"
+        }
+      }
+    }
+  },
+
+  "typography": {
+    "$description": "Typography tokens",
+
+    "fontFamily": {
+      "sans": {
+        "$type": "fontFamily",
+        "$value": ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        "$description": "Primary sans-serif font stack"
+      },
+      "serif": {
+        "$type": "fontFamily",
+        "$value": ["Georgia", "ui-serif", "serif"],
+        "$description": "Serif font stack"
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": ["JetBrains Mono", "ui-monospace", "monospace"],
+        "$description": "Monospace font stack for code"
+      }
+    },
+
+    "fontSize": {
+      "xs":   { "$type": "dimension", "$value": "12px" },
+      "sm":   { "$type": "dimension", "$value": "14px" },
+      "base": { "$type": "dimension", "$value": "16px" },
+      "lg":   { "$type": "dimension", "$value": "18px" },
+      "xl":   { "$type": "dimension", "$value": "20px" },
+      "2xl":  { "$type": "dimension", "$value": "24px" },
+      "3xl":  { "$type": "dimension", "$value": "30px" },
+      "4xl":  { "$type": "dimension", "$value": "36px" },
+      "5xl":  { "$type": "dimension", "$value": "48px" }
+    },
+
+    "fontWeight": {
+      "thin":       { "$type": "fontWeight", "$value": 100 },
+      "light":      { "$type": "fontWeight", "$value": 300 },
+      "regular":    { "$type": "fontWeight", "$value": 400 },
+      "medium":     { "$type": "fontWeight", "$value": 500 },
+      "semibold":   { "$type": "fontWeight", "$value": 600 },
+      "bold":       { "$type": "fontWeight", "$value": 700 },
+      "extrabold":  { "$type": "fontWeight", "$value": 800 },
+      "black":      { "$type": "fontWeight", "$value": 900 }
+    },
+
+    "lineHeight": {
+      "none":    { "$type": "number", "$value": 1 },
+      "tight":   { "$type": "number", "$value": 1.25 },
+      "snug":    { "$type": "number", "$value": 1.375 },
+      "normal":  { "$type": "number", "$value": 1.5 },
+      "relaxed": { "$type": "number", "$value": 1.625 },
+      "loose":   { "$type": "number", "$value": 2 }
+    },
+
+    "letterSpacing": {
+      "tighter":  { "$type": "dimension", "$value": "-0.05em" },
+      "tight":    { "$type": "dimension", "$value": "-0.025em" },
+      "normal":   { "$type": "dimension", "$value": "0em" },
+      "wide":     { "$type": "dimension", "$value": "0.025em" },
+      "wider":    { "$type": "dimension", "$value": "0.05em" },
+      "widest":   { "$type": "dimension", "$value": "0.1em" }
+    }
+  },
+
+  "spacing": {
+    "$description": "Spacing scale tokens",
+    "$type": "dimension",
+    "0":   { "$value": "0px" },
+    "px":  { "$value": "1px" },
+    "0.5": { "$value": "2px" },
+    "1":   { "$value": "4px" },
+    "1.5": { "$value": "6px" },
+    "2":   { "$value": "8px" },
+    "2.5": { "$value": "10px" },
+    "3":   { "$value": "12px" },
+    "3.5": { "$value": "14px" },
+    "4":   { "$value": "16px" },
+    "5":   { "$value": "20px" },
+    "6":   { "$value": "24px" },
+    "7":   { "$value": "28px" },
+    "8":   { "$value": "32px" },
+    "9":   { "$value": "36px" },
+    "10":  { "$value": "40px" },
+    "12":  { "$value": "48px" },
+    "14":  { "$value": "56px" },
+    "16":  { "$value": "64px" },
+    "20":  { "$value": "80px" },
+    "24":  { "$value": "96px" }
+  },
+
+  "borderRadius": {
+    "$description": "Border radius tokens",
+    "$type": "dimension",
+    "none":  { "$value": "0px" },
+    "sm":    { "$value": "2px" },
+    "base":  { "$value": "4px", "$description": "Default radius" },
+    "md":    { "$value": "6px" },
+    "lg":    { "$value": "8px" },
+    "xl":    { "$value": "12px" },
+    "2xl":   { "$value": "16px" },
+    "3xl":   { "$value": "24px" },
+    "full":  { "$value": "9999px", "$description": "Pill shape" }
+  },
+
+  "shadow": {
+    "$description": "Box shadow tokens",
+    "$type": "shadow",
+    "none": {
+      "$value": {
+        "color": "transparent",
+        "offsetX": "0px",
+        "offsetY": "0px",
+        "blur": "0px",
+        "spread": "0px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "color": "rgba(0,0,0,0.05)",
+        "offsetX": "0px",
+        "offsetY": "1px",
+        "blur": "2px",
+        "spread": "0px"
+      }
+    },
+    "base": {
+      "$value": {
+        "color": "rgba(0,0,0,0.10)",
+        "offsetX": "0px",
+        "offsetY": "1px",
+        "blur": "3px",
+        "spread": "0px"
+      }
+    },
+    "md": {
+      "$value": {
+        "color": "rgba(0,0,0,0.10)",
+        "offsetX": "0px",
+        "offsetY": "4px",
+        "blur": "6px",
+        "spread": "-1px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "color": "rgba(0,0,0,0.10)",
+        "offsetX": "0px",
+        "offsetY": "10px",
+        "blur": "15px",
+        "spread": "-3px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "color": "rgba(0,0,0,0.10)",
+        "offsetX": "0px",
+        "offsetY": "20px",
+        "blur": "25px",
+        "spread": "-5px"
+      }
+    },
+    "2xl": {
+      "$value": {
+        "color": "rgba(0,0,0,0.25)",
+        "offsetX": "0px",
+        "offsetY": "25px",
+        "blur": "50px",
+        "spread": "-12px"
+      }
+    },
+    "inner": {
+      "$value": {
+        "color": "rgba(0,0,0,0.05)",
+        "offsetX": "0px",
+        "offsetY": "2px",
+        "blur": "4px",
+        "spread": "0px",
+        "inset": true
+      }
+    }
+  },
+
+  "transition": {
+    "$description": "Animation/transition tokens",
+
+    "duration": {
+      "$type": "duration",
+      "fast":   { "$value": "100ms" },
+      "base":   { "$value": "150ms" },
+      "slow":   { "$value": "250ms" },
+      "slower": { "$value": "350ms" },
+      "slowest": { "$value": "500ms" }
+    },
+
+    "easing": {
+      "$type": "cubicBezier",
+      "linear":     { "$value": [0, 0, 1, 1] },
+      "ease":       { "$value": [0.25, 0.1, 0.25, 1] },
+      "ease-in":    { "$value": [0.4, 0, 1, 1] },
+      "ease-out":   { "$value": [0, 0, 0.2, 1] },
+      "ease-in-out": { "$value": [0.4, 0, 0.2, 1] },
+      "spring":     { "$value": [0.34, 1.56, 0.64, 1] }
+    }
+  }
+}
